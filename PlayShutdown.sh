@@ -1,6 +1,21 @@
 #!/bin/bash
 
 
+############################################################################################
+#
+#  A SCRIPT TO SHUTDOWN THE SYSTEM AFTER THE MPD PLAYLIST END IS REACHED
+#
+#    The script creates a lock file to save the PID for easy retrival, and uses it to
+#    prevent multiple parallel executions of the script.
+#    Traps multiple exit signals to remove the lock file when the script is killed.
+#
+#    The main loop checks if the MPD playlist finished after each change song event. It
+#    also checks when MPD is not in ramdom mode if the previous song was the last in the
+#    playlist index.
+#
+############################################################################################
+
+
 ############
 # LOCKFILE #
 ############
@@ -19,7 +34,6 @@ trap 'rm -f "$LOCKFILE"; exit' INT TERM EXIT
 
 # $$ is the PID
 echo $$ > "$LOCKFILE"
-# echo $! > /tmp/playshtdwn
 # To guard from race conditions create the lock, sleep 1 sec, and verify the PID
 # If the PID is still yours, you successfully acquired the lock
 sleep 1
