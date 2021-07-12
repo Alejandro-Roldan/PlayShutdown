@@ -1,6 +1,17 @@
 #!/bin/bash
 
 
+############################################################################################
+#
+#  A SCRIPT TO SHUTDOWN THE SYSTEM AFTER THE MPD PLAYLIST END IS REACHED
+#
+#    The main loop checks if the MPD playlist finished after each change song event. It
+#    also checks when MPD is not in ramdom mode if the previous song was the last in the
+#    playlist index.
+#
+############################################################################################
+
+
 ########
 # MAIN #
 ########
