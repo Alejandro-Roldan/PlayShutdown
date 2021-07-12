@@ -20,7 +20,7 @@ case $1 in
 		kill -- -$pgid
 		;;
 	"")
-		nohup bash /home/Venus/Programs/Bash/Mpc/PlayShutdown.sh > /dev/null 2>&1 &
+		nohup bash /opt/PlayShutdown.sh > /dev/null 2>&1 &
 		;;
 	*)
 		echo "PlayShutdownd.sh: unrecognized option '$1'"
