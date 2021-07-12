@@ -1,6 +1,20 @@
 #!/bin/bash
 
 
+############################################################################################
+#
+#  A SCRIPT TO HEADLESSLY CONTROL PLAYSHUTDOWN.SH
+#
+#    When no argument is given the script starts headlessly PlaySHutdown.sh
+#
+#    When using the -c switch the script reads the PID from the created lock file and uses
+#    it to get the PGID to kill the whole group.
+#
+#    When any other argument is given raises an error and prints a help message.
+#
+############################################################################################
+
+
 help_msg(){
 	echo "Usage:"
 	echo " PlayShutdown.sh [options]"
