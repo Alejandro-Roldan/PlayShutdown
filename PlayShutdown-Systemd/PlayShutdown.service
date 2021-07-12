@@ -1,0 +1,8 @@
+[Unit]
+Description=Shutdown after MPD queue finishes
+
+[Service]
+ExecStart=/bin/bash /opt/bin/PlayShutdown.sh
+
+[Install]
+WantedBy=multi-user.target 
